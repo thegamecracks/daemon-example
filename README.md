@@ -45,6 +45,10 @@ $ thedaemon ping
 Failed to connect to daemon; did you start it?
 ```
 
+`thedaemon start` can be passed a `--no-daemon` flag if you simply want
+to run the server in the foreground. Beware that on Windows, the server
+will be unable to handle signals like SIGINT (keyboard interrupt).
+
 ## Implementation
 
 `thedaemon start` starts a socket server to serve as the workload for the
