@@ -1,6 +1,7 @@
 import selectors
 import socket
 import sys
+from typing import Self
 
 from .constants import ADDRESS, PORT
 
@@ -21,14 +22,20 @@ def bind_and_listen() -> None:
         server.listen(BACKLOG)
         server.setblocking(False)
 
-        handler = Handler()
-        handler.register(server)
-        handler.run_forever()
+        with Handler() as handler:
+            handler.register(server)
+            handler.run_forever()
 
 
 class Handler:
     def __init__(self) -> None:
         self.selector = selectors.DefaultSelector()
+
+    def __enter__(self) -> Self:
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb) -> None:
+        self.selector.close()
 
     def register(self, server: socket.socket) -> None:
         self.selector.register(server, selectors.EVENT_READ, self._accept)
