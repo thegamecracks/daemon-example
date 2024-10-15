@@ -40,6 +40,7 @@ def ping_server(args) -> None:
 def stop_server(args) -> None:
     with connect_to_server() as client:
         client.sendall(b"stop\n")
+        print(client.recv(1024).decode().rstrip())
 
 
 # Utilities

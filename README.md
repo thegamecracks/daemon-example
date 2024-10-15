@@ -31,6 +31,7 @@ options:
   -h, --help          show this help message and exit
 
 $ thedaemon start
+
 $ thedaemon start
 Daemon already running
 
@@ -38,6 +39,8 @@ $ thedaemon check
 pong
 
 $ thedaemon stop
+stop
+
 $ thedaemon check
 Failed to connect to daemon; did you start it?
 ```
