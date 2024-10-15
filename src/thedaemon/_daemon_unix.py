@@ -2,7 +2,7 @@ import os
 import sys
 
 
-def daemonize() -> None:
+def daemonize(*, win_args: list[str]) -> None:
     """Daemonize the current process by double-forking.
 
     The parent process will always exit after calling this function.

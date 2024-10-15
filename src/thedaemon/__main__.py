@@ -27,7 +27,7 @@ def main() -> None:
 # Commands
 def start_server(args) -> None:
     check_server_not_running()
-    daemonize()
+    daemonize(win_args=["-m", "thedaemon", "start"])
     bind_and_listen()
 
 

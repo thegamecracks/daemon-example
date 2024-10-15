@@ -53,8 +53,7 @@ background process. It can be communicated with by using `thedaemon check`.
 
 On Unix, a double-fork is performed to daemonize the server.
 
-On Windows, daemonization is not implemented and will simply take control of
-the current terminal.
+On Windows, a detached process is created using pythonw.exe as the executable.
 
 ## References
 
