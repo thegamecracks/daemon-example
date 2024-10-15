@@ -14,8 +14,10 @@ def bind_and_listen() -> None:
         # the daemon process is probably running and OSError should be
         # raised. However, it could also be possible that another process
         # is using our port. In that case, tough luck!
+        print("Binding...")
         server.bind((ADDRESS, PORT))
 
+        print("Listening for clients...")
         server.listen(BACKLOG)
         server.setblocking(False)
 
