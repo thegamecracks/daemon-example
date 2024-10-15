@@ -42,6 +42,24 @@ $ thedaemon check
 Failed to connect to daemon; did you start it?
 ```
 
+## Implementation
+
+`thedaemon start` starts a socket server to serve as the workload for the
+background process. It can be communicated with by using `thedaemon check`.
+`thedaemon stop` will connect to the server and send a stop command.
+
+On Unix, a double-fork is performed to daemonize the server.
+
+On Windows, daemonization is not implemented and will simply take control of
+the current terminal.
+
+## References
+
+- https://github.com/Muterra/py_daemoniker
+- https://stackoverflow.com/questions/881388/what-is-the-reason-for-performing-a-double-fork-when-creating-a-daemon
+- https://gist.github.com/dcai/1075904/6f7be00f7f411d5c2e7cd1691dcbb68efacb789c
+- https://aeb.win.tue.nl/linux/lk/lk-10.html
+
 ## License
 
 This project is written under the MIT license.
