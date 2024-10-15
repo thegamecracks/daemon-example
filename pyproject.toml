@@ -14,8 +14,8 @@ dynamic = ["version"]
 [project.scripts]
 thedaemon = "thedaemon.__main__:main"
 
-[tool.setuptools_scm]
-
 [project.urls]
 "Homepage" = "https://github.com/thegamecracks/daemon-example"
 "Issue Tracker" = "https://github.com/thegamecracks/daemon-example/issues"
+
+[tool.setuptools_scm]
