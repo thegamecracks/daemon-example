@@ -13,6 +13,12 @@ def main() -> None:
 
     start = subcmd.add_parser("start", help="Start the daemon process.")
     start.set_defaults(command=start_server)
+    start.add_argument(
+        "--daemon",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Enable/disable daemonization of the server",
+    )
 
     ping = subcmd.add_parser("ping", help="Check if the daemon process is running.")
     ping.set_defaults(command=ping_server)
@@ -27,7 +33,10 @@ def main() -> None:
 # Commands
 def start_server(args) -> None:
     check_server_not_running()
-    daemonize(win_args=["-m", "thedaemon", "start"])
+
+    if args.daemon:
+        daemonize(win_args=["-m", "thedaemon", "start"])
+
     bind_and_listen()
 
 

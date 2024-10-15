@@ -33,6 +33,7 @@ class Handler:
 
     def run_forever(self) -> None:
         while True:
+            # FIXME: handle signals in case --no-daemon is used to host
             events = self.selector.select()
             for key, mask in events:
                 callback = key.data
