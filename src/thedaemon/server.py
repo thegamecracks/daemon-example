@@ -50,3 +50,6 @@ class Handler:
         elif data == b"stop\n":
             client.send(b"stop\n")  # FIXME: may not send all data
             sys.exit()
+        elif data == b"":
+            self.selector.unregister(client)
+            client.close()
