@@ -2,9 +2,10 @@ import os
 import subprocess
 import sys
 from pathlib import PurePath
+from typing import Sequence
 
 
-def daemonize(*, win_args: list[str]) -> None:
+def daemonize(*, win_args: Sequence[str]) -> None:
     """Create a detached process and invoke pythonw.exe with ``win_args``.
 
     The parent process will always exit after calling this function.
@@ -28,7 +29,8 @@ def daemonize(*, win_args: list[str]) -> None:
     python = python.with_name(python.name.replace("python", "pythonw"))
     python = str(python)
 
-    args = [python] + win_args
+    args = [python]
+    args.extend(win_args)
 
     # https://docs.python.org/3/library/subprocess.html#subprocess.Popen
     # If specified, env must provide any variables required for the program to execute.

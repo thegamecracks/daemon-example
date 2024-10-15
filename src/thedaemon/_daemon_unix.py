@@ -1,8 +1,9 @@
 import os
 import sys
+from typing import Sequence
 
 
-def daemonize(*, win_args: list[str]) -> None:
+def daemonize(*, win_args: Sequence[str]) -> None:
     """Daemonize the current process by double-forking.
 
     The parent process will always exit after calling this function.
