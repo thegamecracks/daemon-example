@@ -23,12 +23,12 @@ usage: thedaemon [-h] {start,ping,stop} ...
 
 positional arguments:
   {start,ping,stop}
-    start             Start the daemon process.
+    start            Start the daemon process.
     ping             Check if the daemon process is running.
-    stop              Stop the daemon process.
+    stop             Stop the daemon process.
 
 options:
-  -h, --help          show this help message and exit
+  -h, --help         show this help message and exit
 
 $ thedaemon start
 
