@@ -31,6 +31,8 @@ def daemonize(*, win_args: Sequence[str]) -> None:
 
     args = [python]
     args.extend(win_args)
+    if len(args) == 1:
+        raise ValueError("expected at least 1 element in win_args, received 0")
 
     # https://docs.python.org/3/library/subprocess.html#subprocess.Popen
     # If specified, env must provide any variables required for the program to execute.
