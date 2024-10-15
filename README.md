@@ -19,12 +19,12 @@ Then play around with the CLI:
 
 ```sh
 $ thedaemon  # or python -m thedaemon
-usage: thedaemon [-h] {start,check,stop} ...
+usage: thedaemon [-h] {start,ping,stop} ...
 
 positional arguments:
-  {start,check,stop}
+  {start,ping,stop}
     start             Start the daemon process.
-    check             Check if the daemon process is running.
+    ping             Check if the daemon process is running.
     stop              Stop the daemon process.
 
 options:
@@ -35,20 +35,20 @@ $ thedaemon start
 $ thedaemon start
 Daemon already running
 
-$ thedaemon check
+$ thedaemon ping
 pong
 
 $ thedaemon stop
 stop
 
-$ thedaemon check
+$ thedaemon ping
 Failed to connect to daemon; did you start it?
 ```
 
 ## Implementation
 
 `thedaemon start` starts a socket server to serve as the workload for the
-background process. It can be communicated with by using `thedaemon check`.
+background process. It can be communicated with by using `thedaemon ping`.
 `thedaemon stop` will connect to the server and send a stop command.
 
 On Unix, a double-fork is performed to daemonize the server.

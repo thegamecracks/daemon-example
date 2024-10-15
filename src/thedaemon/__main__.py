@@ -14,8 +14,8 @@ def main() -> None:
     start = subcmd.add_parser("start", help="Start the daemon process.")
     start.set_defaults(command=start_server)
 
-    stop = subcmd.add_parser("check", help="Check if the daemon process is running.")
-    stop.set_defaults(command=ping_server)
+    ping = subcmd.add_parser("ping", help="Check if the daemon process is running.")
+    ping.set_defaults(command=ping_server)
 
     stop = subcmd.add_parser("stop", help="Stop the daemon process.")
     stop.set_defaults(command=stop_server)
