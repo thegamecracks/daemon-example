@@ -12,7 +12,7 @@ With Python 3.11+, install the package with:
 ```py
 python -m venv
 source .venv/bin/activate  # .venv\Scripts\activate on Windows
-pip install .
+pip install git+https://github.com/thegamecracks/daemon-example@v1.1.0
 ```
 
 Then play around with the CLI:
