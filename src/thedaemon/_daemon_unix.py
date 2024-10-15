@@ -7,6 +7,10 @@ def daemonize(*, win_args: list[str]) -> None:
 
     The parent process will always exit after calling this function.
 
+    :param win_args:
+        The command-line arguments to pass to the detached process.
+        Only used in the Windows implementation of daemonize().
+
     """
     pid = os.fork()
     if pid > 0:

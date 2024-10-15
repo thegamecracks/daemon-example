@@ -5,14 +5,18 @@ from pathlib import PurePath
 
 
 def daemonize(*, win_args: list[str]) -> None:
-    """Create a detached process and invoke pythonw.exe with the given arguments.
+    """Create a detached process and invoke pythonw.exe with ``win_args``.
 
     The parent process will always exit after calling this function.
     However, through setting the environment variable ``__IS_DAEMON__``,
     this function becomes a no-op in the child process.
 
     Note that it is not necessary for the invocation of ``win_args``
-    to lead exactly to the same code path as the parent process.
+    to lead to the same code path as the parent process.
+
+    :param win_args:
+        The command-line arguments to pass to the detached process.
+        Only used in the Windows implementation of daemonize().
 
     """
     if os.getenv("__IS_DAEMON__") is not None:
