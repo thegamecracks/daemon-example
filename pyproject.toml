@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "thedaemon"
-description = "An simple demonstration of managing daemon processes."
+description = "A simple demonstration of managing daemon processes."
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [{ name = "thegamecracks" }]
