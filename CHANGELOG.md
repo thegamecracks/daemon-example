@@ -45,7 +45,7 @@ multiple daemon processes from serving at the same time.
 Daemonization is implemented with double-forking on Unix, and detached processes
 on Windows.
 
-[Unreleased]: https://github.com/thegamecracks/theticketbot/compare/v1.2.0...main
-[1.2.0]: https://github.com/thegamecracks/theticketbot/compare/v1.1.0...v1.2.0
-[1.1.0]: https://github.com/thegamecracks/theticketbot/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/thegamecracks/theticketbot/releases/tag/v1.0.0
+[Unreleased]: https://github.com/thegamecracks/daemon-example/compare/v1.2.0...main
+[1.2.0]: https://github.com/thegamecracks/daemon-example/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/thegamecracks/daemon-example/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/thegamecracks/daemon-example/releases/tag/v1.0.0
