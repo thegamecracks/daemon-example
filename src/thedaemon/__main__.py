@@ -1,4 +1,5 @@
 import argparse
+import os
 import sys
 
 from . import daemonize
@@ -12,7 +13,7 @@ def main() -> None:
     parser.add_argument(
         "-P",
         "--port",
-        default=21365,
+        default=os.environ.get("THEDAEMON_PORT", 21365),
         help="The daemon port to use. (default: %(default)s)",
         type=int,
     )

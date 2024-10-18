@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- `-P` / `--port` argument to change which port the daemon runs on
+- `THEDAEMON_PORT` environment variable and `-P` / `--port` argument
+  to customize the client and server port
 
 ## [1.2.0] - 2024-10-15
 
