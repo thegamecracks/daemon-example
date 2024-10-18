@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- `-P` / `--port` argument to change which port the daemon runs on
+
 ## [1.2.0] - 2024-10-15
 
 ### Changed

@@ -3,12 +3,12 @@ import socket
 import sys
 from typing import Self
 
-from .constants import ADDRESS, PORT
+from .constants import ADDRESS
 
 BACKLOG = 5
 
 
-def bind_and_listen() -> None:
+def bind_and_listen(*, port: int) -> None:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
         # Instead of opening a pidfile to check if the daemon process is
         # running, simply attempt to bind to the socket. If it is bound,
@@ -16,7 +16,7 @@ def bind_and_listen() -> None:
         # raised. However, it could also be possible that another process
         # is using our port. In that case, tough luck!
         print("Binding...")
-        server.bind((ADDRESS, PORT))
+        server.bind((ADDRESS, port))
 
         print("Listening for clients...")
         server.listen(BACKLOG)
