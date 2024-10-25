@@ -19,16 +19,17 @@ Then play around with the CLI:
 
 ```sh
 $ thedaemon  # or python -m thedaemon
-usage: thedaemon [-h] {start,ping,stop} ...
+usage: thedaemon [-h] [-P PORT] {start,ping,stop} ...
 
 positional arguments:
   {start,ping,stop}
-    start            Start the daemon process.
-    ping             Check if the daemon process is running.
-    stop             Stop the daemon process.
+    start               Start the daemon process.
+    ping                Check if the daemon process is running.
+    stop                Stop the daemon process.
 
 options:
-  -h, --help         show this help message and exit
+  -h, --help            show this help message and exit
+  -P PORT, --port PORT  The daemon port to use. (default: 21365)
 
 $ thedaemon start
 
