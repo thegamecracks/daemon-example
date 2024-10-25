@@ -50,6 +50,10 @@ Failed to connect to daemon; did you start it?
 to run the server in the foreground. Beware that on Windows, the server
 will be unable to handle signals like SIGINT (keyboard interrupt).
 
+The daemon port can be customized by either passing `-P` / `--port`
+between `thedaemon` and the subcommand you want to run, or by setting
+the environment variable `THEDAEMON_PORT`.
+
 ## Implementation
 
 `thedaemon start` starts a socket server to serve as the workload for the
